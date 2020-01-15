@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://app-dev.woffu.com/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
