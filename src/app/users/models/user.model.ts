@@ -1,4 +1,4 @@
-export interface User {
+export class User {
     $id: string;
     UserId: number;
     UserKey: string;
@@ -7,21 +7,25 @@ export interface User {
     LastName: string;
     Acronym: string;
     Email: string;
-    EmployeeStartDate: string,
-    ImageURL: string,
-    DepartmentId: number,
-    JobTitleId: number,
-    ResponsibleUserId: number,
-    AuthorizingUserId: number,
-    AllocatedDays: number,
-    UsedDays: number,
-    AvailableDays: number,
-    AccumulatedDays: number,
-    LanguageId: number,
-    CalendarId: number,
-    AgreementId: number,
-    Weekends: string,
-    IsAdmin: boolean,
-    IsResponsible: boolean,
+    EmployeeStartDate: string;
+    ImageURL: string;
+    DepartmentId: number;
+    JobTitleId: number;
+    ResponsibleUserId: number;
+    AuthorizingUserId: number;
+    AllocatedDays: number;
+    UsedDays: number;
+    AvailableDays: number;
+    AccumulatedDays: number;
+    LanguageId: number;
+    CalendarId: number;
+    AgreementId: number;
+    Weekends: string;
+    IsAdmin: boolean;
+    IsResponsible: boolean;
     Active: boolean
+
+    constructor(values?: Partial<User>) {
+        Object.assign(this, values);
+    }
 }
