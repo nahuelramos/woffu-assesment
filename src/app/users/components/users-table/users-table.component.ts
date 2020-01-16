@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 
 import { UserService } from '../../services';
 import { User } from '../../models';
@@ -10,16 +10,15 @@ import { User } from '../../models';
   styleUrls: ['./users-table.component.scss']
 })
 export class UsersTableComponent implements OnInit {
-  // @ViewChild(MatPaginator) paginator: MatPaginator
   displayedColumns: string[] = ['personalInformation', 'id', 'vacation', 'incorporationDate'];
-  dataSource: MatTableDataSource<User>;
+  matDataSource: MatTableDataSource<User>;
 
-  constructor(private userService: UserService) {
-    this.userService.getUserList().subscribe((users: User[]) => {
-      this.dataSource = new MatTableDataSource(users);
-    });
+  @Input() dataSource: User[];
+
+  constructor() {
   }
 
   ngOnInit() {
+    this.matDataSource = new MatTableDataSource(this.dataSource);
   }
 }
