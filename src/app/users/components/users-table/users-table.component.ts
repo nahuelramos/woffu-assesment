@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+
 import { MatTableDataSource } from '@angular/material';
 
 import { User } from '../../models';
@@ -8,7 +9,7 @@ import { User } from '../../models';
   templateUrl: './users-table.component.html',
   styleUrls: ['./users-table.component.scss']
 })
-export class UsersTableComponent implements OnInit {
+export class UsersTableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['personalInformation', 'id', 'vacation', 'incorporationDate'];
   matDataSource: MatTableDataSource<User>;
 
@@ -19,5 +20,11 @@ export class UsersTableComponent implements OnInit {
 
   ngOnInit() {
     this.matDataSource = new MatTableDataSource(this.dataSource);
+  }
+
+  ngOnChanges(simpleChanges: SimpleChanges) {
+    if (simpleChanges['dataSource']) {
+      this.matDataSource = new MatTableDataSource(this.dataSource);
+    }
   }
 }
