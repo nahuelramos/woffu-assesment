@@ -7,7 +7,7 @@ export class User {
     LastName: string;
     Acronym: string;
     Email: string;
-    EmployeeStartDate: string;
+    EmployeeStartDate: Date;
     ImageURL: string;
     DepartmentId: number;
     JobTitleId: number;

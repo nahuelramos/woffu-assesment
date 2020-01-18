@@ -22,4 +22,8 @@ export class UsersComponent {
       error: (error: HttpErrorResponse) => this.notificationService.error(`Uups! error :( ${error}`, 'Error')
     });
   }
+
+  applyFilter(date: Date) {
+    this.users = this.userService.filterUserList(date);
+  }
 }
