@@ -2,9 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pb-2">
-                <label class="px-2">Select start date</label>
-                <app-filter #filterComponent (filterChange)="applyFilter($event)"></app-filter>
-                <button class="btn btn-primary" (click)="resetFilter()">Reset filter</button>
+                <app-filter class="pr-2" #filterComponent (filterChange)="applyFilter($event)"></app-filter>
+                <button class="btn btn-primary" (click)="resetFilter()">Remover filtro</button>
             </div>
         </div>
     </div>

@@ -1,3 +1,6 @@
+@import "src/assets/sass/abstracts/variables";
+@import "src/assets/sass/abstracts/mixins";
+
 table {
     width: 100%;
     align-items: center;
@@ -13,6 +16,14 @@ table {
     .mat-column-EmployeeStartDate {
         width: 20%;
         text-align: center;
+
+        @include respond(phone) {
+            padding-right: 0px;
+        }
+    }
+
+    @include respond(phone) {
+        font-size: 60%; // 1rem = 9px, 9/16 = 56.25%
     }
 }
 
@@ -25,10 +36,14 @@ table {
     line-height: 2.5em;
     text-align: center;
     border-radius: 50%;
-    background: plum;
+    background: $acronym;
     vertical-align: middle;
     margin-right: 1em;
-    color: white;
+    color: $white;
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
 }
 
 p {
@@ -36,7 +51,7 @@ p {
 }
 
 ::ng-deep .available-days .mat-progress-bar-fill::after {
-    background-color: #28a745;
+    background-color: $progress-bar-1;
 }
 
 ::ng-deep .available-days .mat-progress-bar {
@@ -44,7 +59,7 @@ p {
 }
 
 ::ng-deep .used-days .mat-progress-bar-fill::after {
-    background-color: #007bff;
+    background-color: $progress-bar-2;
 }
 
 ::ng-deep .used-days .mat-progress-bar {

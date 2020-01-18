@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 
 import { MatDatepickerInputEvent, MatInput } from '@angular/material';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -8,7 +9,7 @@ import { MatDatepickerInputEvent, MatInput } from '@angular/material';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-  date: Date;
+  date = new FormControl();
 
   @Output() filterChange = new EventEmitter<Date>();
 
@@ -22,6 +23,6 @@ export class FilterComponent implements OnInit {
   }
 
   clearDate() {
-    this.date = null;
+    this.date.setValue(null);
   }
 }

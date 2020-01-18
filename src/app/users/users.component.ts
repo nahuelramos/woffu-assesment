@@ -20,7 +20,7 @@ export class UsersComponent {
     this.userService.getUserList().subscribe({
       next: (users: User[]) => {
         this.users = users;
-        this.notificationService.success('Users has been loaded', 'Success :)');
+        this.notificationService.success('Users have been loaded', 'Success :)');
       },
       error: (error: HttpErrorResponse) => this.notificationService.error(`Uups! error :( ${error}`, 'Error')
     });

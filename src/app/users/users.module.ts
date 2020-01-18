@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatTableModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatSortModule, MatProgressBarModule } from '@angular/material';
+import {
+  MatTableModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatSortModule,
+  MatProgressBarModule, MatInputModule
+} from '@angular/material';
 
 import { UsersComponent } from './users.component';
 import { UsersTableComponent } from './components';
@@ -27,6 +30,7 @@ import { FilterComponent } from './components/filter/filter.component';
     FormsModule,
     ReactiveFormsModule,
     MatProgressBarModule,
+    MatInputModule,
   ],
   providers: [
     UserService
