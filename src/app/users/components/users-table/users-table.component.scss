@@ -1,37 +1,52 @@
 table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    align-items:center;
+    width: 100%;
+    align-items: center;
+
     th {
-        align-items: center;
+        text-align: center;
     }
+
     td {
-        align-items:center;
+        text-align: left;
+    }
+
+    .mat-column-EmployeeStartDate {
+        width: 20%;
+        text-align: center;
     }
 }
 
-img {
-    border-radius: 80%;
-    width: 3rem;
-    height: 3rem;
+[data-letters]:before {
+    content:attr(data-letters);
     display: inline-block;
-    vertical-align: middle;
-    padding-right: 1rem;
-}
-
-.vertical {
-    vertical-align: middle;
-}
-
-#profileImage {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: #512DA8;
-    font-size: 35px;
-    color: #fff;
+    font-size: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
     text-align: center;
-    line-height: 150px;
-    margin: 20px 0;
-  }
+    border-radius: 50%;
+    background: plum;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: white;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+::ng-deep .available-days .mat-progress-bar-fill::after {
+    background-color: #28a745;
+}
+
+::ng-deep .available-days .mat-progress-bar {
+    border-radius: 2px;
+}
+
+::ng-deep .used-days .mat-progress-bar-fill::after {
+    background-color: #007bff;
+}
+
+::ng-deep .used-days .mat-progress-bar {
+    border-radius: 2px;
+}

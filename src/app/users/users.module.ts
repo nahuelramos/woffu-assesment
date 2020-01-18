@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatTableModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatSortModule, MatProgressBarModule } from '@angular/material';
 
 import { UsersComponent } from './users.component';
 import { UsersTableComponent } from './components';
@@ -26,9 +26,11 @@ import { FilterComponent } from './components/filter/filter.component';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    MatProgressBarModule,
   ],
   providers: [
     UserService
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UsersModule { }
