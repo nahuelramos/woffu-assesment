@@ -1,7 +1,6 @@
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="matDataSource">
 
-    <!-- Position Column -->
     <ng-container matColumnDef="personalInformation">
       <th mat-header-cell *matHeaderCellDef> Información personal </th>
       <td mat-cell *matCellDef="let element">
@@ -14,25 +13,33 @@
       </td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
       <td mat-cell *matCellDef="let element"> {{ element.UserKey }} </td>
     </ng-container>
 
-    <!-- Weight Column -->
     <ng-container matColumnDef="vacation">
       <th mat-header-cell *matHeaderCellDef> Vacaciones </th>
       <td mat-cell *matCellDef="let element"> {{ element.UsedDays }} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
     <ng-container matColumnDef="incorporationDate">
       <th mat-header-cell *matHeaderCellDef> Fecha de incorporación a la empresa </th>
       <td mat-cell *matCellDef="let element"> {{ element.EmployeeStartDate | date }} </td>
     </ng-container>
+    
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <ng-container *ngIf="matDataSource.data.length === 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pt-3 text-center">
+          <h4>No data found</h4>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>

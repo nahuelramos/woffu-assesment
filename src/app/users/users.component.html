@@ -1,2 +1,16 @@
-<app-filter (filterChange)="applyFilter($event)"></app-filter>
-<app-users-table [dataSource]="users" *ngIf="users"></app-users-table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <div class="pb-1">
+                <label class="px-2">Select start date</label>
+                <app-filter #filterComponent (filterChange)="applyFilter($event)"></app-filter>
+                <button class="btn btn-primary" (click)="resetFilter()">Reset filter</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <app-users-table [dataSource]="users" *ngIf="users"></app-users-table>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 
-import { MatDatepickerInputEvent } from '@angular/material';
+import { MatDatepickerInputEvent, MatInput } from '@angular/material';
 
 @Component({
   selector: 'app-filter',
@@ -21,4 +21,7 @@ export class FilterComponent implements OnInit {
     this.filterChange.emit(event.value);
   }
 
+  clearDate() {
+    this.date = null;
+  }
 }

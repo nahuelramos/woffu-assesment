@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatTableModule, MatPaginatorModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule } from '@angular/material';
 
@@ -23,6 +24,8 @@ import { FilterComponent } from './components/filter/filter.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserService

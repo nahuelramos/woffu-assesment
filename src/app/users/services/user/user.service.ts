@@ -35,4 +35,8 @@ export class UserService {
             return date.toLocaleDateString() === user.EmployeeStartDate.toLocaleDateString();
         });
     }
+
+    getOriginalUserList(): User[] {
+        return this.users;
+    }
 }

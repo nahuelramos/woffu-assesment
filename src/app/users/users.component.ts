@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { UserService } from './services';
 import { User } from './models';
 import { NotificationService } from '../core';
+import { FilterComponent } from './components/filter/filter.component';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,8 @@ import { NotificationService } from '../core';
 })
 export class UsersComponent {
   users: User[];
+
+  @ViewChild('filterComponent', { static: false }) filterComponent: FilterComponent;
 
   constructor(private userService: UserService, private notificationService: NotificationService) {
     this.userService.getUserList().subscribe({
@@ -29,5 +32,10 @@ export class UsersComponent {
     } else {
       this.notificationService.error('Uups! :( please check date input', 'Invalid Date');
     }
+  }
+
+  resetFilter() {
+    this.users = this.userService.getOriginalUserList();
+    this.filterComponent.clearDate();
   }
 }
