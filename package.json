@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "husky": {
     "hooks": {
-      "pre-push": "npm test"
+      "pre-push": "npm run test-no-watch"
     }
   },
   "scripts": {

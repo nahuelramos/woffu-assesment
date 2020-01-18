@@ -37,6 +37,6 @@ export class UserService {
     }
 
     getOriginalUserList(): User[] {
-        return this.users;
+        return [...this.users];
     }
 }
