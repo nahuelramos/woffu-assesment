@@ -24,6 +24,10 @@ export class UsersComponent {
   }
 
   applyFilter(date: Date) {
-    this.users = this.userService.filterUserList(date);
+    if (this.userService.validDate(date)) {
+      this.users = this.userService.filterUserList(date);
+    } else {
+      this.notificationService.error('Uups! :( please check date input', 'Invalid Date');
+    }
   }
 }
