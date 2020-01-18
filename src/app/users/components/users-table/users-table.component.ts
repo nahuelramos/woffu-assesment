@@ -1,30 +1,37 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 import { User } from '../../models';
 
 @Component({
-  selector: 'app-users-table',
-  templateUrl: './users-table.component.html',
-  styleUrls: ['./users-table.component.scss']
+    selector: 'app-users-table',
+    templateUrl: './users-table.component.html',
+    styleUrls: ['./users-table.component.scss']
 })
 export class UsersTableComponent implements OnInit, OnChanges {
-  displayedColumns: string[] = ['personalInformation', 'id', 'vacation', 'incorporationDate'];
-  matDataSource: MatTableDataSource<User>;
+    displayedColumns: string[] = ['FirstName', 'UserKey', 'UsedDays', 'EmployeeStartDate'];
+    matDataSource: MatTableDataSource<User>;
 
-  @Input() dataSource: User[];
+    @Input() dataSource: User[];
 
-  constructor() {
-  }
+    @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  ngOnInit() {
-    this.matDataSource = new MatTableDataSource(this.dataSource);
-  }
-
-  ngOnChanges(simpleChanges: SimpleChanges) {
-    if (simpleChanges['dataSource']) {
-      this.matDataSource = new MatTableDataSource(this.dataSource);
+    constructor() {
     }
-  }
+
+    ngOnInit() {
+        this.createDataSourceAndSorter();
+    }
+
+    ngOnChanges(simpleChanges: SimpleChanges) {
+        if (simpleChanges['dataSource']) {
+            this.createDataSourceAndSorter();
+        }
+    }
+
+    private createDataSourceAndSorter() {
+        this.matDataSource = new MatTableDataSource(this.dataSource);
+        this.matDataSource.sort = this.sort;
+    }
 }

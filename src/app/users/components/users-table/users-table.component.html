@@ -1,8 +1,8 @@
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="matDataSource">
+  <table mat-table [dataSource]="matDataSource" matSort>
 
-    <ng-container matColumnDef="personalInformation">
-      <th mat-header-cell *matHeaderCellDef> Información personal </th>
+    <ng-container matColumnDef="FirstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Información personal </th>
       <td mat-cell *matCellDef="let element">
         <span>
           <p> {{element.Acronym}}</p>
@@ -13,18 +13,18 @@
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
+    <ng-container matColumnDef="UserKey">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> ID </th>
       <td mat-cell *matCellDef="let element"> {{ element.UserKey }} </td>
     </ng-container>
 
-    <ng-container matColumnDef="vacation">
-      <th mat-header-cell *matHeaderCellDef> Vacaciones </th>
+    <ng-container matColumnDef="UsedDays">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Vacaciones </th>
       <td mat-cell *matCellDef="let element"> {{ element.UsedDays }} </td>
     </ng-container>
 
-    <ng-container matColumnDef="incorporationDate">
-      <th mat-header-cell *matHeaderCellDef> Fecha de incorporación a la empresa </th>
+    <ng-container matColumnDef="EmployeeStartDate">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Fecha de incorporación a la empresa </th>
       <td mat-cell *matCellDef="let element"> {{ element.EmployeeStartDate | date }} </td>
     </ng-container>
     
