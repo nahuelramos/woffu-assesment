@@ -1,14 +1,19 @@
 {
   "name": "woffu",
   "version": "0.0.0",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
+    "test-no-watch": "ng test --watch=false",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "prepush": "ng test"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
