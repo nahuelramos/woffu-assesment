@@ -5,10 +5,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NotFoundComponent } from './pages';
 import { AuthInterceptor } from './services';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
-  declarations: [NotFoundComponent],
-  exports: [NotFoundComponent],
+  declarations: [NotFoundComponent, HeaderComponent],
+  exports: [NotFoundComponent, HeaderComponent],
   imports: [
     CommonModule,
     RouterModule
