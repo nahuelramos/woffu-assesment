@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pre-push": "ng test"
+    "prepush": "ng test"
   },
   "private": true,
   "dependencies": {
