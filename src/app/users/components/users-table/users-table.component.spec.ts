@@ -9,8 +9,7 @@ xdescribe('UsersTableComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ UsersTableComponent ]
-    })
-    .compileComponents();
+    });
   });
 
   beforeEach(() => {

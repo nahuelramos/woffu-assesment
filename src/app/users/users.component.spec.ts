@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/internal/Subject';
 import { UsersComponent } from './users.component';
 import { UserService } from './services';
 import { NotificationService } from '../core';
-import { MockUsersTableComponent } from '../shared/testing-mocks/components.spec';
+import { MockUsersTableComponent, MockFilterComponent } from '../shared/testing-mocks/components.spec';
 import { User } from './models';
 
 describe('UsersComponent', () => {
@@ -25,7 +25,8 @@ describe('UsersComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         UsersComponent,
-        MockUsersTableComponent
+        MockUsersTableComponent,
+        MockFilterComponent
       ],
       providers: [
         { provide: NotificationService, useValue: notifcationServiceStub },
